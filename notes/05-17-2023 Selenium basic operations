@@ -1,0 +1,90 @@
+05-17-2023 Selenium basic operations
+
+
+Maven recap:
+-Build tool: open source tool mostly used with Java and helps programmers to keep their dependencies (libraries-jars).
+-pom.xml: it comes with Maven project and we can store all our dependencies here with their versions. This will make updating version easier.
+-Maven provides all the reports in a folder called as target.
+
+
+TestNG recap: open source tool developed for Unit Testing but we also use it as testers. It is mostly used with Java.
+SOME ADVANTAGES:
+	-Annotations: are used to organize our tests
+	-Reports: provides simple reports
+	-Assertions - validation: provides assertions to validate tests
+	-Priority: allows programmers to set order of tests
+
+@Test annotation
+-This is the block that our scripts is written. This will be reported as PASSED or FAILED.
+
+@BeforeMethod annotation
+-used to execute pre-conditions for the tests in a class
+-it runs for each @Test method
+-used for set up purposes
+
+
+@AfterMethod annotation
+-used to execute post-conditions for the tests in a class
+-it runs for each @Test method
+-used for teardown purposes
+
+
+WebDriverManager recap:
+-Helps programmer to set up desired browser such as Google Chrome, Safari, Microsoft Edge, Mozilla Firefox and Opera.
+
+
+
+SeleniumWebDriver recap:
+-Selenium is a suite of tools for automating web browsers.
+-It allows programmers to automate user actions on a specific application on web browser.
+
+
+TYPES OF APPLICATION
+-web application: any application you visit on a web browser
+-desktop application: IntelliJ IDEA, Slack, Excel, Adobe
+-mobile application: any application you download from AppleStore or PlayStore
+
+
+
+SELENIUM BASIC OPERATIONS
+
+1. Launch a browser - instantiate the desired browser object
+WebDriver driver = new FirefoxDriver();
+WebDriver driver = new ChromeDriver();
+
+
+In the above, we can see that polymorphism is used since we see both FirefoxDriver and ChromeDriver in the shape of WebDriver.
+WebDriver is the parent interface
+FirefoxDriver and ChromeDriver are the child classes that directly or indirectly implements the WebDriver interface.
+
+
+
+2. Maximize the browser window - to prevent some elements invisibility
+driver.manage().window().maximize();
+driver.manage().window().fullscreen();
+
+
+3. Implicit wait - to prevent snychronization issues
+driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+NOTE: Web browsers are way slow compared to source code (programming language)
+
+-This will make your driver wait UP TO given seconds before it throws NoSuchElementException.
+-The interval between each attempt to locate the particular element is 0.5 seconds (500 millis). At least 60 attempt when 30 seconds is defined.
+-This is not a HARD-PAUSE and the driver will continue with the next action once the element is located (found).
+
+
+HARD-PAUSE: only used for demo purposes
+Thread.sleep(5000); // hard freeze for 5 seconds
+
+Thread.sleep() method belongs to Java libraries.
+
+
+
+4. Navigate to a web application with their url
+driver.get("applicationURL"); // navigates us to specified URL
+
+
+5. Teardown the browser session
+driver.quit(); // closes all the tabs and quits the browser session
+driver.close(); // closes only current tab

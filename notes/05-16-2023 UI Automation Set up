@@ -1,0 +1,135 @@
+05-16-2023 UI Automation Set up
+
+
+HTML: All the web pages displayed on a web browser is created using HTML tags. 
+
+EXAMPLE: p, a, ul, li, img....
+
+Each HTML tag is displayed as a web element on a web page.
+
+
+Web Browser: Google Chrome, Mozilla Firefox, Safari, Microsoft Edge, Opera
+
+
+Web Page: Each html DOM structure is known as a web page
+
+<html>
+	HTML PAGE
+</html>
+
+
+Web Element: Each tag displayed on a web page.
+
+<button type="submit">Login</button>
+<tagName attribute="value">VISIBLE TEXT</tagName>
+
+
+Tag: button, strong, img, a, ol, ul, li, div, p, h1, h6, hr, br, table, tr, thead, tbody, td, th, form, div, span, html, body, head, title, input 
+
+
+Attribute: type, href, height, width, target, id, class, style, placeholder, for
+
+
+Property: usually used in the style attribute, they are also key and value pairs like color="blue"
+
+
+Element Text: This is the text displayed between the opening and the closing tags.
+
+
+
+
+TEST CASE
+-Step by step instructions to test an expected behavior of an application.
+
+
+Go to https://www.google.com/
+Validate that the user see a search input box
+
+Given the user is on https://www.google.com/
+Then the user should see a search input box
+
+
+EXPECTED: Search input box should be there
+ACTUAL: Search input box was there
+
+PASSED
+
+
+
+
+STEPS TO EXECUTE:
+1. Launch a browser (Google Chrome)
+2. Go to URL given
+3. Validate your test cases
+
+
+
+TEST CASE vs TEST SCRIPT
+Test case: it is a terminology used in manual environment
+Test script: it is a terminology used in automation environment
+
+Test script is the automated test case
+
+
+
+We will set up Selenium WebDriver to use its libraries (many classes and interfaces, they bring many useful methods)
+
+
+
+BASIC JAVA PROJECT FOLDER STRUCTURE
+	project
+		src
+
+
+
+MAVEN PROJECT FOLDER STRUCTURE
+	project
+		src
+			main
+				java
+				resources
+			test
+				java
+
+	target
+
+	pom.xml
+
+
+NOTE:
+-main package is used by DEVELOPERs to build the application
+-test package is used by QAs and DEVELOPERs (Unit tests) to write their tests
+
+
+XML looks similar to HTML as it works with tags
+XML -> Extensible Markup Language - safer
+HTML -> HyperText Markup Language
+
+
+
+DEPENDENCIES = LIBRARIES, JARs etc.
+
+
+
+TestNG
+-It is a tool used for Unit Testing but we also use it to organize our tests using its annotations
+
+NOTE: if you have multiple tests in a class using @Test annotation, they will be executed alphabetically. If you would like to change the order as you wish, you can use priority property.
+
+EXAMPLE:
+    @Test(priority = 1)
+    public void test1(){
+        System.out.println("Hello World");
+    }
+
+
+@BeforeMethod and @AfterMethod
+-There will be some situation that we will need to run some code before each @Test and after each @Test
+-In this case, we can use @BeforeMethod and @AfterMethod
+-@BeforeMethod is used for pre-conditions of the test case. Also know as set up actions
+-@AfterMethod is used for post-conditions of the test case. Also known as tearDown actions
+
+
+
+APjFqb
+APjFqb
