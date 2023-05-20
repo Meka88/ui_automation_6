@@ -1,0 +1,160 @@
+05-20-2023 Selenium Locators Part 1
+
+Automation Framework: is set rules, tools and design patterns - principles used together to complete automation tests.
+	Java as a programming language
+	Maven as a build tool
+	TestNG as Unit Testing tool for its assertions and annotations
+	WebDriverManager to set up the browsers
+	SeleniumWebDriver to do UI automation
+
+
+OOP Principles
+Singleton
+Page Object Model
+
+
+
+SDLC
+Requirements (expected)
+Planning
+Design (expected)
+Development (actual)
+Testing
+Deployment
+Maintanence
+
+
+
+BUG: actual did not match expected
+
+
+
+
+SELENIUM LOCATORS:
+-They are used to identify web elements displayed on a web page
+1. id 			-> fastest, unique, most stable
+2. cssSelector 	-> 2nd fastest after id
+3. xpath 	   	-> most flexible locator
+4. name 		-> 
+5. className 	-> 
+6. tagName 		->
+7. linkText 	->
+8. partialLinkText 	->
+
+
+Locators that uses attributes: id, name, className
+Locators that uses tag name  : tagName
+Locators that uses link text : linkText, partialLinkText
+
+
+
+
+
+<p id="desc" class="md-text">Hello World</p>
+<p id="content" class="md-text">Selenium</p>
+
+
+<input type="text" name="fName" id="fName">
+<input type="text" name="lName" id="lName">
+
+
+<button class="btn" type="submit">SUBMIT</button>
+<button class="btn" type="submit">LOGIN</button>
+
+
+
+Validate first paragraph;
+<p id="desc" class="md-text">Hello World</p>
+
+tag = p
+attribute 1 -> id="desc"
+attribute 2 -> class="md-text"
+Visible Text = Hello World
+
+NOT: driver.getText() is used to read the visible text of an element
+
+
+WHAT TO VALIDATE FOR SUCH ELEMENT?
+1. validate if the paragraph is displayed -> isDiplayed()
+2. validate its text is "Hello World" 	  -> assertEquals()
+
+
+HOW TO LOCATE IT?
+WebElement p1 = driver.findElement(By.id("desc"));
+WebElement p1 = driver.findElement(By.className("md-text"));
+WebElement p1 = driver.findElement(By.cssSelector("#desc"))
+WebElement p1 = driver.findElement(By.cssSelector(".md-text"))
+WebElement p1 = driver.findElement(By.tagName("p"));
+
+
+
+
+
+<p id="item_kiwi">Kiwi</p>
+
+WebElement kiwi_p = driver.findElement(By.id("item_kiwi"));
+
+Assert.assertTrue(kiwi_p.isDisplayed()); // it is visible
+Assert.assertEquals(kiwi_p.getText(), "Kiwi");
+
+
+kiwi_p.getAttribute("id"); // item_kiwi
+
+
+
+
+
+getText() vs getAttribute() vs getCssValue() vs getTagName()
+-getText() 			  : is used to read the visible text of the element
+-getAttribute(string) : is used to read some attributes of the element
+-getCssValue(string)  : is used to read some css-style values
+-getTagName() 		  : is used to read the tag name of the element
+
+
+
+
+HOW TO VALIDATE A LINK?
+<a href="https://en.wikipedia.org/wiki/Red_apple">Red Apple</a>
+
+
+1. Validate if the link is displayed
+2. Validate if it is enabled (clickable)
+3. Validate its text to be exactly matching requirement
+4. Validate if it navigates user to the right link
+
+
+
+HOW TO LOCATE A LINK?
+<a href="https://en.wikipedia.org/wiki/Red_apple">Red Apple</a>
+
+
+WebElement redAppleLink = driver.findElement(By.linkText("Red Apple"));
+WebElement redAppleLink = driver.findElement(By.partialLinkText("Red"));
+
+
+
+
+
+<a href="https://en.wikipedia.org/wiki/Red_apple">Red Apple</a>
+<a href="https://en.wikipedia.org/wiki/Green_apple">Green Apple</a>
+<a href="https://en.wikipedia.org/wiki/Pineapple">Pineapple</a>
+
+
+driver.findElement(By.linkText("Red Apple")); // one element
+driver.findElement(By.linkText("Green Apple")); // one element
+driver.findElement(By.linkText("Pineapple")); // one element
+
+
+driver.findElements(By.partialLinkText("Apple")); // 2 elements
+driver.findElement(By.partialLinkText("apple")); // one element
+driver.findElements(By.partialLinkText("pple")); // 3 elements
+
+
+
+
+
+WHAT IS USE OF tagName LOCATOR?
+-They are useful for below type of validation
+	-Make sure all the links on the page are not broken
+	-Make sure all the images on the page are not broken
+	-Can be used for h1 as it is highly common to have one h1 tag per page
