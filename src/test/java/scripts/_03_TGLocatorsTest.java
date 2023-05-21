@@ -1,36 +1,19 @@
 package scripts;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
-public class _03_TGLocatorsTest {
-    public static WebDriver driver;
+public class _03_TGLocatorsTest extends Base{
     @BeforeMethod
-    public void setup(){
-        WebDriverManager.chromedriver().setup(); // Set up Chrome driver
-
-        driver = new ChromeDriver(); // Launch a Chrome driver
-        driver.manage().window().maximize(); // Maximizes the Chrome window
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); // implicit wait
-
+    public void setPage(){
         driver.get("https://techglobal-training.com/frontend/locators");
     }
 
-    @AfterMethod
-    public void tearDown() throws InterruptedException {
-        //Thread.sleep(3000);
-        driver.quit();
-    }
 
     @Test(priority = 1)
     public void validateKiwiParagraph(){

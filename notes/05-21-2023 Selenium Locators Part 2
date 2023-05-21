@@ -1,0 +1,110 @@
+05-21-2023 Selenium Locators Part 2
+
+SELENIUM LOCATORS:
+-They are used to identify web elements displayed on a web page
+1. id 			-> fastest, unique, most stable
+2. cssSelector 	-> 2nd fastest after id
+3. xpath 	   	-> most flexible locator
+4. name 		-> 
+5. className 	-> 
+6. tagName 		->
+7. linkText 	-> used for anchor (a) elements
+8. partialLinkText 	-> used for anchor (a) elements
+
+-id, className, name atrributes can be used as a LOCATOR
+-tagName can also be used as a LOCATOR
+-linkText and partialLinkText can be used to locate anchor elements
+
+
+XPATH & CSS
+-These are the most complex locators
+-They both have their own syntaxes
+-They are the most used locators
+
+-CSS is faster
+-XPATH is more flexible
+-Xpath can move from parent to child and child to parent element but CSS can only move from parent to child
+
+
+
+CSS Selector
+SYNTAX: tagName[att='attribute_value']
+EXAMPLE 1 -> 		p[id='content']
+EXAMPLE 2 -> 		p[class='text']
+
+p[id='content']
+
+-it searches for the attribute id which equals to "content"
+-then it finds the one that is paragraph
+
+
+
+XPATH
+SYNTAX: //tagName[@att='attribute_value']
+
+
+<tagName att1="value1" att2="value2">VISIBLE TEXT</tagName>
+<p id="content" class="text">Welcome to Automation</p>
+
+-getTagName() 			-> p
+-getText() 				-> Welcome to Automation
+-getAttribute("id") 	-> content
+-getAttribute("class") 	-> text
+-getCssValue("color") 	-> rgba(225, 255, 225, 1)
+
+
+
+
+
+<div id="container">
+	<p id="content">Welcome to Automation</p>
+	<p id="desc">You will learn all the automation tools here</p>
+</div>
+
+WebElement container = driver.findElement(By.id("container"));
+WebElement p1 = driver.findElement(By.id("content"));
+WebElement p2 = driver.findElement(By.id("desc"));
+
+
+container.getText(); // 
+ 	Welcome to Automation
+ 	You will learn all the automation tools here
+
+p1.getText(); // Welcome to Automation
+p2.getText(); // You will learn all the automation tools here
+
+
+
+
+How many different ways you can locate below element?
+
+<div id="main_header_container" class="PageTitle_main_header_container__C-K4e">
+	<h1 id="main_heading">Xpath-CSS Locators</h1>
+</div>
+
+
+Locating parent element and moving to direct child with CSS and xpath!
+
+XPATH 	-> 		//div[@id='main_header_container']/h1
+CSS 	-> 		div[id='main_header_container']>h1
+
+XPATH 	-> parent/child
+CSS 	-> parent>child
+
+Locating parent element and moving to descendant child with CSS and xpath!
+
+XPATH 	-> parent//child
+CSS 	-> parent child
+
+
+USING INDEXES WITH CSS AND XPATH!
+CSS provides nth-child(index) method 	-> 	.Footer_socials__7h4n1>a:nth-child(2)
+XPATH provides [index] 					->  //div[@class='Footer_socials__7h4n1']/a[2]
+
+
+driver.findElement(By.id("main_heading"));
+driver.findElement(By.cssSelector("#main_heading"));
+driver.findElement(By.cssSelector("h1[id='main_heading']"));
+driver.findElement(By.xpath("//h1[@id='main_heading']"));
+
+driver.findElement(By.xpath("//h1[text()='Xpath-CSS Locators']"));
