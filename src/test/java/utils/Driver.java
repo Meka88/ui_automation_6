@@ -17,7 +17,7 @@ public class Driver {
 
             driver = new ChromeDriver(); // Launch a Chrome driver
             driver.manage().window().maximize(); // Maximizes the Chrome window
-            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); // implicit wait
+            driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS); // implicit wait
         }
         return driver;
     }

@@ -1,0 +1,79 @@
+05-22-2023 Selenium Locators Part 3
+
+
+1. id: unique, fastest, most stable
+2. css: second fastest
+3. xpath: most flexible
+4. name:
+5. className:
+6. tagName: 
+7. linkText:
+8. partialLinkText: 
+
+
+driver.findElement(By.tagName("a")); // first a element of all
+driver.findElements(By.tagName("a")); // all elements with a tag
+href attribute is not empty
+
+driver.findElements(By.tagName("img")); // all the image elements
+src attribute is not empty
+
+
+CSS vs XPATH
+-they have their own syntaxes
+CSS -> 		tagName[attribute='value']
+XPATH -> 	//tagName[@attribute='value']
+
+CSS 	-> #id
+		-> .className
+
+
+Locate direct child with parent element
+CSS 	-> parent>child
+XPATH 	-> parent/child
+
+
+
+Locate descendant child with parent element
+CSS 	-> parent child
+XPATH 	-> parent//child
+
+
+NOTE: Both CSS and XPATH allows us to move from parent to child elements
+BUT, ONLY XPATH allows us to move from child to parent
+
+XPATH 	-> /..
+
+
+
+<div class="Footer_socials__7h4n1">
+
+</div>
+
+
+XPATH METHODS
+XPATH -> 	//tagName[@attribute='value']
+contains() 			-> //tagName[contains(@attribute, 'partial-value')]
+starts-with() 		-> //tagName[starts-with(@attribute, 'initial-part')]
+ends-with() 		-> //tagName[ends-with(@attribute, 'last-part')]
+
+
+
+CSS contains & starts-with & ends-with
+
+
+img 				-> isDisplayed()
+h1-h6, p, label 	-> isDisplayed() + assertEquals()
+
+input 				-> isDisplayed() + isEnabled() + assertEquals()
+button 				-> isDisplayed() + isEnabled() + assertEquals()
+
+anchor link 		-> isDisplayed() + isEnabled() + assertEquals() + href
+
+
+
+ACTIONS WITH INPUT BOXES
+sendKeys()
+clear()
+
+you can get value of the input boxes after sending some texts. The value should be equal to your keys sent!

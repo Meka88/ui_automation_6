@@ -1,0 +1,22 @@
+05-23-2023 Handling dynamic elemens & Waits
+
+<p id="05_123"></p>
+
+XPATH WAY
+//p[@id='element']
+//p[contains(@id, 'element')]
+//p[starts-with(@id, 'element')]
+//p[ends-with(@id, 'element')]
+
+
+CSS WAY
+p[id^='element'] // starts with
+p[id*='element'] // contains
+p[id$='element'] // ends with
+
+
+Implicit wait
+-Implicit wait, also called global wait prevents the program to throw a NoSuchElementException. While the implicit wait is useful to ensure that WebDriver does not throw an exception, if the element is not immediately available, it could be less precise.
+-An explicit wait allows you to set a specific condition to be met before proceeding with the rest of the script rather than just waiting for a certain amount of time. This can be useful in situations where you want to wait for a specific web element to be visible, clickable and etc.
+-For example, if we have a page that loads the content dynamically, we may want to use an explicit wait to wait for a specific condition for that specific element to appear on the page rather than just waiting a set amount of time within the implicit wait.
+-Also, it is important to note that, if we are using both implicit and explicit wait in our script, the explicit wait will have more priority over the implicit wait and the script will wait for the explicit wait condition to be met.
