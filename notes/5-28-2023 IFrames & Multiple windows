@@ -1,0 +1,95 @@
+5-28-2023 IFrames & Multiple windows
+
+-iframe: it is known an html page in the another html page - inner html
+
+NOTE: Selenium can focus one thing at a time. 
+
+
+
+In the below case, there is an outer (parent iframe) and inner (child iframe).
+-if you need to click or take any action in the inner iframe, then you will need switch selenium focus to that specific iframe first.
+-Otherwise, you will get NoSuchElementException
+
+<html>
+	<head>
+
+	</head>
+
+	<body>
+	<iframe>
+		<html>
+			<head>
+
+			</head>
+
+			<body>
+
+			</body>
+
+		</html>
+	</iframe>
+	</body>
+
+</html>
+
+
+
+
+IN THE JIRA
+
+TC123: Validate the IFrame Page content paragraph
+Go to https://techglobal-training.com/frontend/iframes
+Validate the "Please fill out your information below" paragraph
+
+
+
+
+NOTE: There are two ways to switch back to the parent iFrame
+driver.switchTo().parentFrame(); --> this will go back to the parent
+driver.switchTo().defaultContent(); --> this will go back to default html
+
+
+What is their difference?
+parentFrame() method moves back to direct parent
+defaultContent() method moves back to all the way to default html (first)
+
+
+
+
+How to find all iFrames in a HTML DOM?
+How to find all images in a HTML DOM?
+How to find all links in a HTML DOM?
+How to find all h1 in a HTML DOM?
+
+driver.findElements(By.tagName("iframe"));
+
+
+
+MULTIPLE WINDOWS TESTING
+WindowHandle: it is the unique id given to each browser window or the tab
+
+
+driver.getWindowHandle(); // returns the id of the current tab/window
+driver.getWindowHandles(); // returns all the ids of existing tabs
+
+
+
+Set<String> allWindows = driver.getWindowHandles();
+
+
+-Set allows only unique elements
+-No insertion order
+
+
+
+NoSuchElementException: When element is not found in the DOM.
+
+StaleElementReferenceException: When your driver loses reference of the element in the DOM. 
+Your driver locates the element once but then it loses it in the DOM.
+
+
+NoSuchWindowException: When the window Selenium focused does not exists anymore.
+
+NoSuchAlertException: When you dismiss or accept an alert and still trying to take action on it.
+
+

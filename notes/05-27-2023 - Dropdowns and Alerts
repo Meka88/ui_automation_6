@@ -1,0 +1,38 @@
+05-27-2023 - Dropdowns and Alerts
+
+	Handling dropdowns
+
+	There are 2 types of dropdowns,
+		1. with <select> Web tag
+			We can handle this type of dropdown with using Select class in selenium.
+			Syntax:
+			// we create object and pass the dropdown
+			Select select = new Select(dropdown);
+
+			// then we can select the options.
+			select.selectByVisibleText(dropdownOption);
+			select.selectByValue(dropdownOption);
+			select.selectByIndex(dropdownIndex);
+
+		2. regular type of dropdown with <div>
+			There is nothing specific we need to do for the regular type of dropdowns. We will locate it like a regular web element, click the dropdown, and locate it options and click the option.
+
+
+	Handling Alerts
+
+		There are 3 types of alerts in JavaScript;
+			1. Warning Alert
+			2. Confirmation Alert
+			3. Prompt Alert
+
+		JavaScript alerts are not the part of the dom. And we need to handle this alerts because while we have these alerts on the page, we will not be able to interact anything on the page.
+		So that's why, we have to switch our driver focus to JavaScript alert and handle that with the help of Alert class in Selenium
+
+		Syntax:
+			Alert alert = driver.switchTo().alert()
+
+			// we have 4 main methods
+				1. alert.accept() // accepts the alert
+				2. alert.dismiss() // rejects the alert
+				3. alert.sendKeys(text) // sends text to prompt alert
+				4. alert.getText() // gets the text of the alert.

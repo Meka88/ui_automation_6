@@ -1,0 +1,20 @@
+05-24-2023 RadioButtons and CheckBoxes
+
+ -- WAITS RECAP --
+ - Implicit wait
+ Prevents program to throw NoSuchElementException. It tries every 0.5 seconds. It is also called global wait.
+ 	NOTE: NoSuchElementException = If element we want to find is not existing in the DOM, the program will throw an exception.
+
+ - Explicit wait
+ 	Explicit more like for specific condition. It will wait up to certain amount of time for the specific condition that we defined.
+ 	Ex; Element to be visible, element to be clickable, attribute to be etc.
+ 	It tries for that specific condition every 0.5 seconds, and when the condition is met, it wont wait for the timeout and it executes the action.
+
+ - Fluent wait
+ 	It works as same as Explicit wait, only difference is we can set the iteration time.
+
+
+ 	Radio Buttons and Checkboxes
+
+ 	<label> -> click action must be for this element
+ 	<input type="checkbox"> -> to check if it is selected, or contains any information, you must use this tag.
