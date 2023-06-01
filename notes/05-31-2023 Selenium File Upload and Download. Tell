@@ -1,0 +1,74 @@
+05-31-2023 Selenium File Upload and Download. Tell me about your framework
+
+File Upload:
+
+		1. We need to locate 2 elements.
+			- input tag
+			- upload button
+		2. So we are handling file upload as regular input tag. File upload input tag allows us to senKeys(filePath) to the input as a file path.
+			String filePath = ""/Users/userName/IdeaProjects/ui_automation_6/hello.txt"
+
+			driver.findElement(By.id("id")).sendKeys(filePath);
+
+	File Download:
+
+		1. Selenium itself fully automate the File Download process. That's why we will need to use other libraries like AutoIT and Robot, or we can validate if the file is downloaded with using Java classes and methods.
+
+		2. To download the file we need to click on download link, and manually check if the file is downloaded.
+
+
+
+
+ Tell me about your Framework ?
+
+ - Java is the programming language
+ - Its build up with different components
+ - We are using selenium to do UI automation
+ - TestNG for its Assertions and Annotations
+ - Our framework build on Maven build tool.
+ - We handle our tests inside the scripts folder, and we have Base
+ class that we inherit all of our pages with Before and After method
+ to provide reusabitlity.
+ - We have the utils folder to store some methods to improve the reusability and readibility on all over the framework.
+ 	1. Maven
+ 	 	- Dependency management
+ 		- Folder structure
+ 		- provides a reporting inside the target folder
+ 	2. Gradle
+ 	3. Ant
+ - Using pom.xml to centralize our dependencies, plugins and their versions.
+ - Framework is integrated to GitLab for version control.
+ - We implement singleton design pattern in our framework
+ - It is integrated to CI/CD using Jenkins as a cloud tool.
+ - Framework is integrated to Zephyr as test management tool
+
+ Framework we build right now is TDD ( Test-Driven-Development framework).
+
+ 	- Shift-left testing: Writing your automation before development finished.
+
+
+
+
+
+In my company, we employ the TDD (Test-Driven Development) framework alongside Java as our programming language.
+Our platform is built upon Maven, a powerful build tool that comes with a well-structured folder layout and pom.xml.
+These tools enable us to centralize our dependencies, plugins, and their respective versions.
+
+We use a variety of dependencies, primarily Selenium, for automating our web browsers, and TestNG for its assertions
+and annotations. Our tests are organized within the scripts folder, with a Base class acting as the foundation from
+which all our pages inherit. This Base class includes the Before and After methods, offering significant reusability.
+
+We also have a utils folder dedicated to storing methods designed to enhance both reusability and readability across
+the entire framework. Our Framework is integrated into GitLab for version control and is linked to Jenkins as a CI/CD tool,
+allowing us to run our tests in the cloud. Moreover, we use Jira in combination with Zephyr as a test management tool.
+
+When it comes to implementing Object-Oriented Programming (OOP) principles in our framework, encapsulation plays a key
+role in achieving a singleton design pattern. This pattern ensures our driver instance is always initiated from a single
+resource. We utilize inheritance to foster a parent-child relationship, providing further reusability within our framework.
+
+Additionally, we have implemented polymorphism, manifested in the form of ChromeDriver(), which we call in WebDriver form.
+The use of collection interfaces allows us to employ abstraction.
+
+I have previously contributed to creating a framework from scratch using both BDD (Behavior-Driven Development) and TDD.
+Therefore, if the company needs this expertise, I am comfortable offering it. However, if not, I am more than willing to
+contribute towards improving the existing framework to the best of my abilities.

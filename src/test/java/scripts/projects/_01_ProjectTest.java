@@ -1,14 +1,15 @@
-package scripts;
+package scripts.projects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import scripts.Base;
 
 import java.util.List;
 
-public class _01_ProjectTest extends Base{
+public class _01_ProjectTest extends Base {
     @BeforeMethod
     public void setPage(){
         driver.get("https://techglobal-training.com/frontend/project-1");
