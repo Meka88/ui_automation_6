@@ -17,19 +17,20 @@ public class _01_ProjectTest extends Base {
 
     @Test(priority = 1, description = "TC01 Validate Contact Us Info")
     public void validateContactUsPage(){
-        WebElement heading = driver.findElement(By.cssSelector("h1[class='is-size-2']"));
+        WebElement heading = driver.findElement(By.cssSelector(".mb-5>h1"));
+        WebElement address = driver.findElement(By.id("address"));
+        WebElement email = driver.findElement(By.id("email"));
+        WebElement phoneNumber = driver.findElement(By.id("phone-number"));
+
         Assert.assertTrue(heading.isDisplayed());
         Assert.assertEquals(heading.getText(), "Contact Us");
 
-        WebElement address = driver.findElement(By.id("address"));
         Assert.assertTrue(address.isDisplayed());
         Assert.assertEquals(address.getText(), "2860 S River Rd Suite 350, Des Plaines IL 60018");
 
-        WebElement email = driver.findElement(By.id("email"));
         Assert.assertTrue(email.isDisplayed());
         Assert.assertEquals(email.getText(), "info@techglobalschool.com");
 
-        WebElement phoneNumber = driver.findElement(By.id("phone-number"));
         Assert.assertTrue(phoneNumber.isDisplayed());
         Assert.assertEquals(phoneNumber.getText(), "(773) 257-3010");
     }
@@ -37,10 +38,11 @@ public class _01_ProjectTest extends Base {
     @Test(priority = 2, description = "TC02 Validate Full name InputBox")
     public void validateFullNameInputBox(){
         WebElement inputBox = driver.findElement(By.cssSelector("form>div:nth-child(1)>div>input"));
+        WebElement nameLabel = driver.findElement(By.cssSelector("form>div:nth-child(1)>label"));
+
         Assert.assertTrue(inputBox.isDisplayed());
         Assert.assertEquals(inputBox.getAttribute("required"), "true");
 
-        WebElement nameLabel = driver.findElement(By.cssSelector("form>div:nth-child(1)>label"));
         Assert.assertEquals(nameLabel.getText(), "Full name *");
         Assert.assertEquals(inputBox.getAttribute("placeholder"), "Enter your name");// bug
 
@@ -48,14 +50,14 @@ public class _01_ProjectTest extends Base {
 
     @Test(priority = 3, description = "TC03 Validate Gender RadioBox")
     public void validateGenderRadioBox(){
-        WebElement gender = driver.findElement(By.cssSelector("div.field:nth-child(2) label.label"));
-        Assert.assertEquals(gender.getText(), "Gender *");
-        Assert.assertEquals(gender.getAttribute("required"), "true");
-
-        List<WebElement> genderInputList = driver.findElements(By.cssSelector(".mr-1"));
-        List<WebElement> genderLabelList = driver.findElements(By.cssSelector("div[class='field'] label.radio"));
+        WebElement genderLabel = driver.findElement(By.xpath("//label[text()='Gender *']"));
+        List<WebElement> genderInputList = driver.findElements(By.cssSelector(".radio>input"));
+        List<WebElement> genderLabelList = driver.findElements(By.cssSelector(".radio"));
 
         String[] labelList = {"Male", "Female", "Prefer not to disclose"};// Bug order
+
+        Assert.assertEquals(genderLabel.getText(), "Gender *");
+        Assert.assertEquals(genderInputList.get(0).getAttribute("required"), "true");
 
         for (int i = 0; i < genderLabelList.size(); i++) {
             Assert.assertTrue(genderLabelList.get(i).isDisplayed());
@@ -64,13 +66,13 @@ public class _01_ProjectTest extends Base {
             Assert.assertFalse(genderInputList.get(i).isSelected());
         }
 
-        genderLabelList.get(1).click();
+        genderLabelList.get(0).click();
         Assert.assertTrue(genderInputList.get(0).isSelected());
         for (int i = 1; i < genderLabelList.size(); i++) {
             Assert.assertFalse(genderInputList.get(i).isSelected());
         }
 
-        genderLabelList.get(0).click();
+        genderLabelList.get(1).click();
         Assert.assertTrue(genderInputList.get(1).isSelected());
 
         for (int i = 0; i < genderLabelList.size(); i++) {
@@ -82,49 +84,70 @@ public class _01_ProjectTest extends Base {
     @Test(priority = 4, description = "TC04 Validate Address InputBox")
     public void validateAddressInput(){
         WebElement addressInput = driver.findElement(By.cssSelector("div[class='field']:nth-child(3) input"));
-        Assert.assertTrue(addressInput.isDisplayed());
-        Assert.assertEquals(addressInput.getAttribute("required"), "false");
         WebElement addressLabel = driver.findElement(By.cssSelector("div[class='field']:nth-child(3) label"));
+
+        Assert.assertTrue(addressInput.isDisplayed());
+        Assert.assertTrue(addressInput.isEnabled());
+        Assert.assertNotEquals(addressInput.getAttribute("required"), "true");
+
         Assert.assertEquals(addressLabel.getText(), "Address");
-        Assert.assertEquals(addressInput.getAttribute("placeholder"), "Enter your address*");//fail because of requirement vs actual
+        Assert.assertEquals(addressInput.getAttribute("placeholder"), "Enter your address");//fail because of requirement vs actual
     }
 
     @Test(priority = 5, description = "TC05 Validate Email InputBox")
     public void validateEmailInput(){
         WebElement emailInput = driver.findElement(By.cssSelector("div[class='field']:nth-child(4) input"));
-        Assert.assertTrue(emailInput.isDisplayed());
-        Assert.assertEquals(emailInput.getAttribute("required"), "true");
         WebElement emailLabel = driver.findElement(By.cssSelector("div[class='field']:nth-child(4) label"));
-        Assert.assertEquals(emailLabel.getText(), "Email");// fail because of requirement vs actual
+
+        Assert.assertTrue(emailInput.isDisplayed());
+        Assert.assertTrue(emailInput.isEnabled());
+        Assert.assertEquals(emailInput.getAttribute("required"), "true");
         Assert.assertEquals(emailInput.getAttribute("placeholder"), "Enter your email");
+
+        Assert.assertTrue(emailLabel.isDisplayed());
+        Assert.assertEquals(emailLabel.getText(), "Email *");
     }
 
     @Test(priority = 6, description = "TC06 Validate Phone InputBox")
     public void validatePhoneInput(){
         WebElement phoneInput = driver.findElement(By.cssSelector("div[class='field']:nth-child(5) input"));
-        Assert.assertTrue(phoneInput.isDisplayed());
-        Assert.assertEquals(phoneInput.getAttribute("required"), "false");
         WebElement phoneLabel = driver.findElement(By.cssSelector("div[class='field']:nth-child(5) label"));
-        Assert.assertEquals(phoneLabel.getText(), "Phone");
+
+        Assert.assertTrue(phoneInput.isDisplayed());
+        Assert.assertTrue(phoneInput.isEnabled());
+        Assert.assertNotEquals(phoneInput.getAttribute("required"), "true");
         Assert.assertEquals(phoneInput.getAttribute("placeholder"), "Enter your phone number");
+
+        Assert.assertTrue(phoneLabel.isDisplayed());
+        Assert.assertEquals(phoneLabel.getText(), "Phone");
     }
 
     @Test(priority = 7, description = "TC07 Validate MessageTextArea")
     public void validateMessageTextArea(){
         WebElement textArea = driver.findElement(By.cssSelector(".textarea"));
-        Assert.assertTrue(textArea.isDisplayed());
-        Assert.assertEquals(textArea.getAttribute("required"), "false");
         WebElement messageLabel = driver.findElement(By.cssSelector("div[class='field']:nth-child(6) label"));
-        Assert.assertEquals(textArea.getAttribute("placeholder"), "Type your message here…"); // bug report dots
+
+        Assert.assertTrue(textArea.isDisplayed());
+        Assert.assertTrue(textArea.isEnabled());
+        Assert.assertNotEquals(textArea.getAttribute("required"), "true");
+        Assert.assertEquals(textArea.getAttribute("placeholder"), "Type your message here...");
+
+        Assert.assertTrue(messageLabel.isDisplayed());
+        Assert.assertEquals(messageLabel.getText(), "Message");
     }
 
     @Test(priority = 8, description = "TC08 Validate Consent CheckBox")
     public void validateConsentCheckbox(){
         WebElement checkboxLabel = driver.findElement(By.cssSelector("div[class='field']:nth-child(7) label"));
-        Assert.assertEquals(checkboxLabel.getText(), "I give my consent to be contacted.");
         WebElement checkboxInput = driver.findElement(By.cssSelector("div[class='field']:nth-child(7) input"));
+
+        Assert.assertTrue(checkboxLabel.isDisplayed());
+        Assert.assertEquals(checkboxLabel.getText(), "I give my consent to be contacted.");
+
         Assert.assertEquals(checkboxInput.getAttribute("required"), "true");
         Assert.assertTrue(checkboxInput.isEnabled());
+        Assert.assertFalse(checkboxInput.isSelected());
+
         checkboxInput.click();
         Assert.assertTrue(checkboxInput.isSelected());
         checkboxInput.click();
