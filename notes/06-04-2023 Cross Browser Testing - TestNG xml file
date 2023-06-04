@@ -1,0 +1,86 @@
+06-04-2023 Cross Browser Testing - TestNG xml files
+
+
+Selenium advantages:
+	-open source tools to automate browsers
+	-supports multiple programming languages
+	-supports multiple browsers
+	-supports multiple OS
+	-supports multiple automation frameworks
+	-easy to learn and implement
+	-supports parallel testing with Selenium Grid
+	-Flexible ways to interact with web elements
+	-HUGE COMMUNITY SUPPORT
+
+
+Selenium disadvantages:
+	-slow compared to other automation tools like Cypress and Playwright
+	-works with ONLY web-based applications
+	-CANNOT automate barcodes, captchas, images, graphics, maps, PDFs
+	-CANNOT automate multi-factor authentication
+	-Synchronization is effort to implement
+	-Reports are not good to present so it needs third party tools like TestNG, JUnit, Cucumber, Allure Reports, Extend Reports, Jenkins
+
+
+CROSS BROWSER TESTING:
+Have you ever involve in Cross Browser Testing?
+-Yes, I executed my scripts on Chrome, Firefox, Safari and Edge.
+
+It is known as testing the same test cases on different platforms-browsers.
+
+What are the challenges comes with cross-browser testing?
+-Implementation: code refactoring to adapt new browser testing by using switch cases or if-else statements
+
+BIGGEST CHALLENGE: Different browser supports different implementation and your test scripts may pass on some browsers while they fail for some others.
+
+
+Chrome = 2 passed - 12 seconds
+Firefox = 2 passed - 19 seconds
+Safari = 2 passed - 21 seconds
+
+
+Regression (all test cases): Chrome
+Smoke (5-15 test cases): Cross-Browser
+
+
+
+FRAMEWORK IMPROVEMENTS:
+GLOBAL VARIABLES READ MECHANISM:
+browser=chrome
+app_url=www.
+implicit_wait=30
+explicit_wait=30
+
+
+1. We store all the global environment variables in a file
+	This file could be any type of file like json, txt, java, properties
+2. Create some useful methods to read the global environment variables
+3. We will use these methods to fetch data in your framework
+
+
+
+ConfigurationReader.getProperty("browser"); // "chrome"
+ConfigurationReader.getProperty("implicit_wait"); // "30"
+
+
+
+
+TESTNG xml files
+-These xml files are used to define different suites and exucute them separately
+-EXAMPLE: Smoke, Regression, Functionao, End to end, Login
+
+
+
+Create a suite called as smoke.xml
+	_01_GoogleTest -> validateSearchBar
+	_03_TGLocatorsTest -> validateAllParagraphs
+	_05_FacebookTest -> validateFacebookLoginForm
+	_06_WikiTest -> validateWikiSearch1
+
+
+Create a suite called as regression.xml
+	Have all the test cases except the ones in the Smoke
+
+
+How do you decide what is Smoke or Regression?
+	-Among all the test cases, we mark the most critical ones as Smoke and the rest to be Regression.
