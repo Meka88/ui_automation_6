@@ -1,0 +1,171 @@
+05-30-2023 Advantages of UI Automation and Selenium
+
+Computer: input-process-output
+software + hardware
+
+hardware: parts - physical devices
+software: programs, os etc.
+
+software -> soul
+hardware -> skeleton
+
+
+Software: is a set of instruction to use computers.
+
+
+Software is what we have in out pockets - phones, machines.
+System software -> Operating systems: MACOS, WINDOWS, Android, IOS
+Application software -> Target, Walmart, Amazon
+						Instagram, Facebook, WhatsApp
+						Chase, BOFA, USBank
+						Candy Crush, Texas Holdem
+						YouTube, NetFlix, Spotify
+						Gmail, Google Maps
+						Office
+
+
+Life need -> IDEA -> SDLC -> Product (software)
+
+
+
+Client ($$$) 	- 
+Steak holders				
+
+
+Product Owner
+- technical or non-technical
+- Prepares the requirements (acceptance criteria)
+- Creates EPICs, User stories, acceptance criteria
+
+
+
+System Architects - Designer
+- Backend development, frontend development, testing tools, deployments, 
+- What DB, tools, languages
+
+
+Designers
+- Design the pages etc.
+
+
+Developers
+- Backend Developers: API, DB 	-> Java, .Net, Phyton, Go, Ruby...
+- Frontend Developers: UI 		-> Javascript, HTML, CSS
+
+Backend Developers: Java spring-boot framework
+Frontend Developers: JS React, Angular, Vue
+
+
+Framework: tools, design patterns, rules that you use to create backend, frontend or testing structures.
+
+A framework uses a programming language with set of tools designed around it
+
+
+EXAMPLE: Java, Maven, TestNG, WebDriverManager, Selenium WebDriver
+		 Singleton design pattern, OOP Principles
+
+
+
+
+Does usually backend or frontend starts first?
+- it does not depend!
+- both can be BUT!
+- MOST of the time, backend goes first
+
+
+
+
+Testers
+- Manual testers : human efforts
+- Automation testers : code to simulate human actions
+
+ADVANTAGES of AUTOMATION: 
+- eliminates human errors
+- time and cost saving
+- reliable and more accurate
+- reusable and repetitive
+- increased test coverage
+- less resource
+- reports - faster to get reports
+- parallel execution
+- debugging - logs
+
+
+DISADVANTAGES of AUTOMATION
+- initial costs
+- may not always mimic the real user actions
+- refactoring - maintanence
+- cannot automate everything - restrictions
+- styles, alignments, positions
+- no random test 
+
+
+
+
+Manual: QA / Quality Assurance / Quality Analyst / QE / Quality Engineer / Tester / Test Engineer
+
+Automation: SDET / Automation Tester / Automation Test Engineer / Software Engineer in Test
+
+
+
+Selenium: 
+- it is a testing tool
+- it is used for web app automation
+- it can be used with multiple browsers (Chrome, Firefox, Edge, Safari)
+- it can be used with multiple programming languages
+- it consist of multiple components
+	Selenium IDE
+	Selenium RC
+	Selenium WebDriver
+	Selenium Grid
+- it provides libraries to automate user actions - interact with web elements
+- it can be used with operating systems such as macOS, Windows
+- it can be used for parallel testing
+- open source
+- HUGE COMMUNITY
+
+
+-Selenese is the language used by Selenium IDE
+
+
+SELENIUM COMPONENTS
+Selenium IDE: is not preferred!
+Selenium RC (Remote Control): was merged with Selenium WebDriver
+Selenium WebDriver: automates tests
+Selenium Grid: allows parallel execution
+
+
+
+
+SELENIUM ADVANTAGES:
+-open source and there is a huge community support
+-supports multiple programming languages: Java, JS, C#, etc.
+-supports multiple operating systems (cross-platform): Mac, Windows
+-supports multiple browsers: Chrome, Firefox, Edge, Safari
+-supports parallel testing
+-easy to learn and implement
+
+
+SELENIUM DISADVANTAGES:
+-Slow compared to Cypress and Playwright
+-Waits - synchronization
+-Supports only web-based application
+-Cannot automate Capthcas, barcodes, graphics, maps, images
+-Reports
+
+
+ALTERNATIVES
+-Similar: WebDriverIO
+-NEW tools: Cypress, Playwright
+
+
+WHY SELENIUM IS IN USE?
+-Switch is not easy
+-HUGE COMMUNITY
+
+
+
+
+
+
+

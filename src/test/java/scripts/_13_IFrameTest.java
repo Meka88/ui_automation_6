@@ -32,7 +32,7 @@ public class _13_IFrameTest extends Base{
         //driver.switchTo().frame("form_name");
 
 
-        WebElement formParagraph = driver.findElement(By.cssSelector("name_form>p"));
+        WebElement formParagraph = driver.findElement(By.cssSelector("#name_form>p"));
 
         Assert.assertTrue(formParagraph.isDisplayed());
         Assert.assertEquals(formParagraph.getText(), "Please fill out your information below");
@@ -56,7 +56,7 @@ public class _13_IFrameTest extends Base{
         WebElement lastNameInput = driver.findElement(By.id("last_name"));
         lastNameInput.sendKeys("Doe");
         WebElement submitBtn = driver.findElement(By.id("submit"));
-        submitBtn.click();
+        submitBtn.submit();
         driver.switchTo().parentFrame();
         WebElement result = driver.findElement(By.id("result"));
         Assert.assertTrue(result.isDisplayed());

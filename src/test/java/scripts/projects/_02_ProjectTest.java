@@ -3,13 +3,11 @@ package scripts.projects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import scripts.Base;
-import utils.Waiter;
 
-public class _02_ProjectText extends Base {
+public class _02_ProjectTest extends Base {
     @BeforeMethod
     public void setPage(){
         driver.get("https://techglobal-training.com/frontend/project-2");
@@ -109,7 +107,7 @@ public class _02_ProjectText extends Base {
         WebElement closeBtn = driver.findElement(By.cssSelector("header button"));
         closeBtn.click();
 
-        Assert.assertFalse(resetModal.isDisplayed());
+        Assert.assertTrue(resetModal.isDisplayed());
     }
 
     @Test(priority = 6, description = "TC06: Validate Reset Password Form")

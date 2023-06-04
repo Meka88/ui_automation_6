@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/mekab/IdeaProjects/ui_automation_6/src/test/java/scripts">
+        <classes>
+            <class name="scripts._01_GoogleTest">
+                <methods>
+                    <exclude name="validateSearchBar"/>
+                    <include name="validateTitleAndURL"/>
+                    <include name="validateNavigation"/>
+                    <include name="validateSearchButton"/>
+                </methods>
+            </class>
+            <class name="scripts._02_AppleTest">
+                <methods>
+                    <include name="validateTitleAndURL"/>
+                </methods>
+            </class>
+            <class name="scripts._03_TGLocatorsTest">
+                <methods>
+                    <include name="validateKiwiParagraph"/>
+                    <include name="validateOrangeParagraph"/>
+                    <include name="validateGrapesParagraph"/>
+                    <exclude name="validateElements"/>
+                    <include name="validateLinkApple"/>
+                    <include name="validateAllLinks"/>
+                </methods>
+            </class>
+            <class name="scripts._04_TGLocatorsTest">
+                <methods>
+                    <include name="validateTheHeader"/>
+                    <include name="validateLanguages"/>
+                    <include name="validateAutomationTools"/>
+                    <include name="validateListHeaders"/>
+                </methods>
+            </class>
+            <class name="scripts._05_FacebookTest">
+                <methods>
+                    <exclude name="validateFacebookLoginForm"/>
+                    <include name="validateFacebookInvalidLoginAttempt"/>
+                </methods>
+            </class>
+            <class name="scripts._06_WikiTest">
+                <methods>
+                    <exclude name="validateWikiSearch"/>
+                </methods>
+            </class>
+            <class name="scripts._07_TGDynamicElementsTest">
+                <methods>
+                    <include name="validateBox1"/>
+                    <include name="validateBox2"/>
+                    <include name="validateDynamicBoxElements"/>
+                </methods>
+            </class>
+            <class name="scripts._08_TGWaitTest">
+                <methods>
+                    <include name="validateWaitForRedBox"/>
+                    <include name="validateWaitForBlueBox"/>
+                </methods>
+            </class>
+            <class name="scripts._09_TGCheckboxTest">
+                <methods>
+                    <include name="validateCheckboxes"/>
+                    <include name="validateCheckboxes2"/>
+                </methods>
+            </class>
+            <class name="scripts._10_TGRadioButtonsTest">
+                <methods>
+                    <include name="validateRadioButtons"/>
+                    <include name="validateRadioBox"/>
+                </methods>
+            </class>
+            <class name="scripts._11_TGDropdownsTest">
+                <methods>
+                    <include name="validateProductDropdown"/>
+                    <include name="validateColorDropdown"/>
+                    <include name="validateShipmentDropdown"/>
+                    <include name="validateDropdowns"/>
+                </methods>
+            </class>
+            <class name="scripts._12_TGAlertsTest">
+                <methods>
+                    <include name="validateWarningAlert"/>
+                    <include name="validateConfirmationAlert"/>
+                    <include name="validatePromptAlert"/>
+                </methods>
+            </class>
+            <class name="scripts._13_IFrameTest">
+                <methods>
+                    <include name="validateTheParagraph"/>
+                    <include name="validateTheFormSubmission"/>
+                </methods>
+            </class>
+            <class name="scripts._14_MultipleWindowsTest">
+                <methods>
+                    <include name="validateTheAppleNavigation"/>
+                    <include name="validateMicrosoftNavigation"/>
+                    <include name="validateTeslaNavigation"/>
+                    <include name="validateAllLinks"/>
+                </methods>
+            </class>
+            <class name="scripts._15_TGFileUpload">
+                <methods>
+                    <include name="validateUploadButton"/>
+                    <include name="validateFileUpload"/>
+                </methods>
+            </class>
+            <class name="scripts._16_TGFileDownload">
+                <methods>
+                    <include name="validateDownload"/>
+                </methods>
+            </class>
+            <class name="scripts._17_TGStaticTableTest">
+                <methods>
+                    <include name="validateTableHeaders"/>
+                    <include name="validateFirstRow"/>
+                    <include name="validateLastColumn"/>
+                    <include name="validateEachCell"/>
+                </methods>
+            </class>
+            <class name="scripts._18_TGSortableTableTest">
+                <methods>
+                    <include name="validateSortAscendByQuantity"/>
+                    <include name="validateSortDescendByQuantity"/>
+                    <include name="validateAscendingPriceColumn"/>
+                    <include name="validateDescendPrice"/>
+                </methods>
+            </class>
+            <class name="scripts.projects._01_ProjectTest">
+                <methods>
+                    <include name="validateContactUsPage"/>
+                    <include name="validateFullNameInputBox"/>
+                    <include name="validateGenderRadioBox"/>
+                    <include name="validateAddressInput"/>
+                    <include name="validateEmailInput"/>
+                    <include name="validatePhoneInput"/>
+                    <include name="validateMessageTextArea"/>
+                    <include name="validateConsentCheckbox"/>
+                    <include name="validateSubmitButton"/>
+                    <include name="validateFormSubmission"/>
+                </methods>
+            </class>
+            <class name="scripts.projects._02_ProjectTest">
+                <methods>
+                    <include name="validateTheLoginForm"/>
+                    <include name="validateLogin"/>
+                    <include name="validateLogout"/>
+                    <include name="validateForgotPasswordLinkAndResetPassword"/>
+                    <include name="validateCloseButtonOnResetPasswordModal"/>
+                    <include name="validateResetPasswordForm"/>
+                    <include name="validateInvalidLoginWithEmptyCredentials"/>
+                    <include name="validateInvalidLoginWithInvalidUsername"/>
+                    <include name="validateInvalidLoginWithInvalidPassword"/>
+                    <include name="validateInvalidLoginWithInvalidUsernameAndPassword"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
