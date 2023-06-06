@@ -24,30 +24,16 @@ Tell me more about this ________ project?
 
 
 
-2. Anthem(now is Elevence Health since June 2022) - health insurance company, Headquarters: Indianapolis, IN.  Java, Selenium, Cucumber (worte scripts on JS, Python)
+2. Anthem, Inc
+I worked with Anthem, Inc web application and particularly the “Customer Support” component. I involved in automating the interaction with the user interface of the application to ensure that it functioned correctly, responded accurately, and provided a good user experience. The main goal was to identify any issues or anomalies in the user interface of their Customer Support module, ensuring a smooth and consistent experience for the customers.
 
+NOTE: Anthem, Inc is a leading health insurance company in the United States that provides a wide range of healthcare-related products and services. They offer health insurance coverage to individuals, employers, and government entities, along with wellness programs and healthcare management solutions.
+Headquarters = 220 Virginia Ave, Indianapolis, IN
+App in the production = https://www.anthem.com/
 
-What is domain and what are some of their projects they work on?
-domain of healthcare and health insurance.
-Some of the projects or initiatives that Anthem may be involved in within this domain include:
-			-Health Insurance Plans
-			-Healthcare Management
-			-Wellness Programs
-			-Healthcare Technology and Innovation
-			-Community Engagement and Outreach
+Responsibilities:
 
-
-
-Tell me which of their projects require UI and/or API automation testing?
-			-Web Portals and Mobile Apps
-			-Claims Processing Systems
-			-Provider Network Management
-			-Integration with Healthcare Systems
-			-Digital Health Solutions
-
-
-
-Tell me more about this ________ project?
+I worked with the .NET platform and utilized the NUnit framework to automate UI scripts using Selenium WebDriver. Throughout this role, I extensively utilized the C# programming language as the foundation for the automation framework. As part of my responsibilities, I conducted cross-browser testing by executing the Smoke suite on popular browsers such as Chrome, Edge, and Firefox. Additionally, I performed regression testing specifically on Chrome prior to releases and at the conclusion of sprints, ensuring the stability and reliability of the application.
 
 
 
@@ -78,3 +64,4 @@ Tell me which of their projects require UI and/or API automation testing?
 
 
 Tell me more about this ________ project?
+

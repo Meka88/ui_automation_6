@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="C:/Users/mekab/IdeaProjects/ui_automation_6/src/test/java/scripts">
+<suite name="Regression">
+    <test verbose="2" preserve-order="true" name="All Functionalities">
         <classes>
             <class name="scripts._01_GoogleTest">
                 <methods>

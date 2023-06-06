@@ -1,0 +1,86 @@
+06-05-2023 Maven Builds - Profiles
+
+Selenium Automation: Web Elements, browsers, alert, windows, tales, iframes, forms
+
+TestNG: Annotations, Assertions, reports, xml files
+
+TestNG xml files provides opportunity to group together test cases and run them in different suites.
+
+Smoke, Regression 	-> smoke.xml, regression.xml
+
+
+Maven: Integrate your TestNG xml files with Maven Profiles to be configured together with Jenkins. This will later allow us to create jobs in the cloud and execute the suites without human effort.
+
+GIT: We store our repository with Git using GitHub, GitLab or Bitbucket
+
+
+Smoke -> everyday at 6 AM -> send me email at okan@usbank.com
+Regression -> every other week (a specific day)
+
+
+
+Maven: it is an open source project build tool mainly used for java based projects.
+-Maven can manage a project's build, reporting and documentation
+
+ADVANTAGES:
+-> 	pom.xml: centralize all our dependencies like TestNG, Selenium WebDriver, WebDriverManager, JavaFaker
+	This makes it easy for us maintain our dependencies with their versions.
+	mvnrepository is where you can find all the useful dependencies
+
+-> Maven enable us to create different profiles to be executed with Jenkins
+
+-> default folder structure:
+	main -> used by developer
+	test -> used by developer/tester for testing purposes
+	pom.xml
+	target -> all the build results and reports
+
+
+
+
+.m2 folder will be automatically created in your local (machine) once you create a Maven project.
+-m2 folder is the default folder used by maven to store its settings (it is hidden by default).
+-It is a folder which stores all the dependencies we use in the projects.
+
+
+CMD+SHIFT+H 	-> this navigates you to your Home directory
+CDM+SHIFT+. 	-> this reveals/hides hidden files
+
+
+
+
+MAVEN COMMANDS
+	-> mvn archetype: generate is used to create a new project
+EXAMPLE: mvn archetype:generate -DgroupId=TechGlobal -DartifactId=DemoMavenProject
+	-> mvn clean is used to clean the previous build data from the target directories
+	-> mvn compile is used to compile the source code of the project
+	-> mvn test-compile is used to compile the test source code of the project
+	-> mvn test is used to run tests for the project
+	-> mvn package is used to create jar or war files
+	-> mvn install is used to install jar files in local repository (updates .m2 file)
+	-> mvn deploy is used to deploy code to the remote repository
+
+
+
+MOST USED ONES
+mvn clean 		-> deletes target folder (deleting all the previous build results - deleting all the previous reports)
+
+
+mvn compile 	-> checking any syntax error in the main package
+mvn test-compile-> checking any syntax error in the test package
+-> mvn test is used to run tests for the project
+
+-> mvn install is used to install jar files in local repository (updates .m2 file)
+
+
+
+mvn test is going to run every @Test annotation in the test package
+
+mvn test -PSmoke
+mvn test -PRegression
+
+
+
+Let's say you run the Regression and there are 10 failures. How do you group them together and rerun?
+-The way I configured my framework already handles this issue. I am executing Regression with a Maven profile which integrated with TestNG xml file and it creates SUREFIRE reports after the execution. Finally, it provides all the html, xml and different types of reports under the target folder.
+There, it provides a separate xml file which stores ONLY the failed scripts. I just run that file one more time.
