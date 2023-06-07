@@ -12,7 +12,7 @@ public class _12_TGAlertsTest extends Base{
     @BeforeMethod
     public void setPage(){
         driver.get("https://techglobal-training.com/frontend/");
-        driver.findElement(By.id("card-8"));
+        driver.findElement(By.id("card-8")).click();
     }
 
 
