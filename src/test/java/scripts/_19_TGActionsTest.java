@@ -1,6 +1,7 @@
 package scripts;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -85,5 +86,50 @@ public class _19_TGActionsTest extends Base{
         Waiter.waitForVisibilityOfElement(resultOfDragAndDrop, 30);
         Assert.assertEquals(resultOfDragAndDrop.getText(), "An element dropped here!");
 
+    }
+
+    /**
+     * TEST CASE 3
+     * Go to https://techglobal-training.com/frontend/
+     * Click on the "Actions" card
+     * Go to the input box, and remove if there is an existing text inside
+     * First, enter “h” to the input box in upper case using keyboard actions
+     * Then complete the word by sending “ello” as a key
+     * Validate value attribute of the input box is “Hello”
+     */
+    @Test
+    public void validateKeyBoardAction(){
+        WebElement inputBox = driver.findElement(By.id("input_box"));
+        actions.keyDown(Keys.SHIFT)
+                .sendKeys(inputBox, "h")
+                .keyUp(Keys.SHIFT)
+                .sendKeys("ello")
+                .perform();
+        Waiter.pause(5);
+        Assert.assertEquals(inputBox.getAttribute("value"), "Hello");
+    }
+
+    /**
+     * TEST CASE 4
+     * Go to https://techglobal-training.com/frontend/
+     * Click on the "Actions" card
+     * Go to the input box, and remove if there is an existing text inside
+     * Enter “techglobal” to input the box with uppercases
+     * Then, copy the text and paste it again
+     * Validate the value attribute for the search input box is “TECHGLOBALTECHGLOBAL”
+     */
+
+    @Test
+    public void validateTechGlobalEntry(){
+        WebElement inputBox = driver.findElement(By.id("input_box"));
+
+        actions.keyDown(Keys.SHIFT)
+                .sendKeys(inputBox, "techglobal")
+                .keyUp(Keys.SHIFT)
+                .keyDown(Keys.CONTROL)
+                .sendKeys("acvv")
+                .perform();
+
+        Assert.assertEquals(inputBox.getAttribute("value"), "TECHGLOBALTECHGLOBAL");
     }
 }

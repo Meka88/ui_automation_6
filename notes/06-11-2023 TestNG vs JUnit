@@ -1,0 +1,98 @@
+06-11-2023 TestNG vs JUnit
+
+
+Recap:
+
+Page Object Model
+-It is a design pattern enables programmers (testers) to store all the elements related to a web page in their respective class (object repository)
+-We can also create reusable methods related to this specific page in their respective class
+-@FindBy is used to locate elements
+-PageFactory and its initElements() method is used in the default contructor to introduce all the web elements with our single driver.
+
+
+Advantages:
+	- Reusable
+	- Readability
+	- Maintanence of web elements easier
+
+
+
+
+TASK
+Go to “https://www.etsy.com/”
+Validate the user see below menu item links with expected texts
+    Father’s Day Gifts
+    Jewelry & Accessories
+    Clothing & Shoes
+    Home & Living
+    Wedding & Party
+    Toys & Entertainment
+    Art & Collectibles
+    Craft Supplies
+    Gifts & Gift Cards
+
+
+
+
+Animal a1 = new Animal(); // declaration and initialization
+
+Animal a1; // declaration in the base class
+
+a1 = new Animal(); // initialization in the child class
+
+
+
+
+TestNG:
+- Unit testing tool we used for annotations, assertions, reports
+- xml files: grouping together the test scripts 
+- DataProvider: used to execute same script with different data
+- Set priority between tests - ordering purposes
+- Help us with parallel testing
+- Dependency between test cases
+
+
+
+
+IGNORING SOME TEST SCRIPTs
+1. Command out or delete the @Test annotation for the script
+	(NOT RECOMMENDED)
+2. Use @Ignore annotation on the top of test you would like ignore
+	SYNTAX:
+		    @Ignore
+    		@Test
+
+3. Use enabled=false property next @Test annotation
+	SYNTAX: @Test(enabled = false)
+
+
+
+DATA PROVIDER ANNOTATION 
+-DataProvider annotation is useful when you will execute the same script with different data sets
+-It will execute the scripts for each data you povided in the @DataProvider
+
+
+Syntax:
+@DataProvider
+public Object[] getData(){
+	
+}
+
+
+Login test
+Username 		Password 		Message
+empty 			empty			Invalid Username entered!
+wrong 			correct 		Invalid Username entered!
+correct 		wrong 			Invalid Password entered!
+wrong 			wrong 			Invalid Username entered!
+
+
+TestNG Soft Assertions
+-Hard assertions: used to stop the execution if there is failure.
+-Soft assertions: used to verify expected output but do not pause the script execution till the end. And will attach the failure to the report once all the script is executed.
+
+JUnit vs TestNG
+-Initial, JUnit was relased by Apache
+-Then, TestNG was released
+	TestNG = Test New Generation
+-TestNG is more improved version of JUnit

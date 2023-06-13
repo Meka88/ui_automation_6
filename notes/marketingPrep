@@ -1,0 +1,134 @@
+My companies:
+
+Recent: Java 		Java
+Middle: C# 		Java
+Old: Java  		C#
+Java, Maven, TestNG, IntelliJ, Oracle SQL, JIRA, Jenkins, GitLab, Confluence
+C#, .NET, NUnit, Visual Studio, MS SQL, Azure DevOps
+Azure DevOps = JIRA, Jenkins, GitLab, Confluence
+
+
+MARKET PREP SESSION 2
+3 companies
+WHAT TO KNOW ABOUT THE COMPANIES?
+-domain
+-businesses
+-headquarters - where they are located - IT department
+-SCRUM TEAM: 1 QA, 4 DEV, 1 BA, 1 PO
+-PROJECT: What project did you worked on and what were your responsibilities?
+What is _______ domain and what are some of their projects they work on?
+Tell me which of their projects require UI and/or API automation testing?
+Tell me more about this ________ project?
+What tools do they use for their automation testing?
+Distrubute your knowledge into 3 companies
+Linkedin certifications, FreeCodeCamp certifications, ISTQB certification, AWS practitioner
+Recent: Javascript-Cypress, Java, TestNG, Cucumber, JUnit, API, Database, Postman, SQL, Jenkins, GIT, Maven.....
+Middle
+Oldest
+one of your old companies: .NET (C#), NUnit, Selenium WebDriver, Postman, SQL, GIT, Azure DevOps
+
+
+
+
+1- Northern Trust - finanancial services and investment company with headquaters in Chicago. Java, Spring, CI/CD
+
+What is domain and what are some of their projects they work on?
+
+Northern trust engages in various initiatives and projects to meet the evolving needs of its clients and the market. Some of them are:
+		-digital transformation
+		-sustainable investment
+		-Blockchain and Distributed Ledger technology(DTL)
+		-wealth management innovation
+		-cliet service enhancements 
+		-risk management and regulatory compliance
+
+
+Tell me which of their projects require UI and/or API automation testing?
+
+		- Digital platforms-online banking portals, investment management dashboards, and wealth management applications;
+		- Mobile Applications
+		- Trading and Investment Systems- portfolio management, order execution, and trade settlement;
+		- Data Integration and Reporting
+
+Tell me more about this ________ project?
+
+
+
+2. Anthem, Inc
+I worked with Anthem, Inc web application and particularly the “Customer Support” component. I involved in automating the interaction with the user interface of the application to ensure that it functioned correctly, responded accurately, and provided a good user experience. The main goal was to identify any issues or anomalies in the user interface of their Customer Support module, ensuring a smooth and consistent experience for the customers.
+
+NOTE: Anthem, Inc is a leading health insurance company in the United States that provides a wide range of healthcare-related products and services. They offer health insurance coverage to individuals, employers, and government entities, along with wellness programs and healthcare management solutions.
+Headquarters = 220 Virginia Ave, Indianapolis, IN
+App in the production = https://www.anthem.com/
+
+Responsibilities:
+
+I worked with the .NET platform and utilized the NUnit framework to automate UI scripts using Selenium WebDriver. Throughout this role, I extensively utilized the C# programming language as the foundation for the automation framework. As part of my responsibilities, I conducted cross-browser testing by executing the Smoke suite on popular browsers such as Chrome, Edge, and Firefox. Additionally, I performed regression testing specifically on Chrome prior to releases and at the conclusion of sprints, ensuring the stability and reliability of the application.
+
+
+
+
+3.Verizon - telecommunications company, Headquarters: New York, NY. Java, Python, Selenium
+
+
+What is domain and what are some of their projects they work on?
+
+Verizon is primarily focused on providing telecommunications services, including wireless, internet, and television services.
+
+Here are some notable projects or areas of interest for Verizon:
+			-5G Technology
+			-Internet of Things (IoT)
+			-Media and Content
+			-Cloud Services
+			-Cybersecurity
+
+
+Tell me which of their projects require UI and/or API automation testing?
+
+		-Wireless Service Management
+		-Internet Services
+		-Mobile Applications
+		-API Testing for Backend Systems
+		-Content Delivery Platforms
+		-Cloud Services
+
+
+Tell me more about this ________ project?
+
+
+
+
+
+
+
+
+Test-Driven Framework -> based on TestNG
+Tell me about your UI Framework.
+-My framework uses Java programming language as its core and all the other tools are designed around it.
+-We use Maven as a build and it provides many advantages such as providing pom.xml,  creating profiles, and executing profiles with maven commands.
+-Maven also centralize all our dependencies like TestNG, Selenium, WebDriverManager and more in the pom.xml and it makes it easy for us to maintain them with their versions.
+-We also utilize Maven surefire reports to be generated after executing our profiles with Maven commands (mvn test -PSmoke)
+-We use TestNG in our framework for its advantages like annotations, assertions, DataProvider, xml files, setting priorities and more.
+-We use Selenium WebDriver and WebDriverManager to set up the browsers and interact with web elements for our UI scripts.
+-We implement design patterns like Singleton to provide a single driver to be used across the project and Page Object Model to centralize all the web elements in their respective classes to increase the reusability, readability and maintanence of the elements in case some locators changing. Not only elements but we also store reusable methods.
+-We do have an important package in our framework where we store all the utility classes having methods like setting-quitting driver, reading global configurations, and handling advanced frontend tasks like table-handling, dropdown-handling etc.
+-Our framework is designed to handle Cross-Browser testing which is controlled from configuration.properties file where we store all the important global information.
+-We execute 2 important suites in our framework and these are Smoke and Regression suites and they are integrated with xml files and maven profiles. Also, we push code to GitLab and the repo is intergrated with Jenkins to automatically trigger the test executions.
+-We run Smoke daily at __ AM and Regression at the end of each sprint.
+-We currently have 8 Smoke test cases which runs in 5 mins and 540 Regression test cases which run in 3.5 hours.
+-Besides all of the above, we use all the OOP principles in our framework to provide the best coding practices and increase the code reusability and readability. One good example is that we have a Base Test class where we execute all the before and after actions and all the other Test classes inheriting these from the Base class.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

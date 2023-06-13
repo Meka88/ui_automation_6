@@ -16,16 +16,7 @@
                     <include name="validateTitleAndURL"/>
                 </methods>
             </class>
-            <class name="scripts._03_TGLocatorsTest">
-                <methods>
-                    <include name="validateKiwiParagraph"/>
-                    <include name="validateOrangeParagraph"/>
-                    <include name="validateGrapesParagraph"/>
-                    <exclude name="validateElements"/>
-                    <include name="validateLinkApple"/>
-                    <include name="validateAllLinks"/>
-                </methods>
-            </class>
+            <class name="scripts._03_TGLocatorsTest"/>
             <class name="scripts._04_TGLocatorsTest">
                 <methods>
                     <include name="validateTheHeader"/>
@@ -126,34 +117,9 @@
                     <include name="validateDescendPrice"/>
                 </methods>
             </class>
-            <class name="scripts.projects._01_ProjectTest">
-                <methods>
-                    <include name="validateContactUsPage"/>
-                    <include name="validateFullNameInputBox"/>
-                    <include name="validateGenderRadioBox"/>
-                    <include name="validateAddressInput"/>
-                    <include name="validateEmailInput"/>
-                    <include name="validatePhoneInput"/>
-                    <include name="validateMessageTextArea"/>
-                    <include name="validateConsentCheckbox"/>
-                    <include name="validateSubmitButton"/>
-                    <include name="validateFormSubmission"/>
-                </methods>
-            </class>
-            <class name="scripts.projects._02_ProjectTest">
-                <methods>
-                    <include name="validateTheLoginForm"/>
-                    <include name="validateLogin"/>
-                    <include name="validateLogout"/>
-                    <include name="validateForgotPasswordLinkAndResetPassword"/>
-                    <include name="validateCloseButtonOnResetPasswordModal"/>
-                    <include name="validateResetPasswordForm"/>
-                    <include name="validateInvalidLoginWithEmptyCredentials"/>
-                    <include name="validateInvalidLoginWithInvalidUsername"/>
-                    <include name="validateInvalidLoginWithInvalidPassword"/>
-                    <include name="validateInvalidLoginWithInvalidUsernameAndPassword"/>
-                </methods>
-            </class>
+            <class name="scripts._19_TGActionsTest"/>
+            <class name="scripts.projects._01_ProjectTest"/>
+            <class name="scripts.projects._02_ProjectTest"/>
         </classes>
     </test>
 </suite>
